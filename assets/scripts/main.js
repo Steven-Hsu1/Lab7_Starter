@@ -82,7 +82,7 @@ async function getRecipes() {
   // A1. TODO - Check local storage to see if there are any recipes.
   //            If there are recipes, return them.
   /**************************/
-  const recipes = window.localStorage.getItem("recipes");
+  const recipes = localStorage.getItem("recipes");
   if (recipes) {
     return JSON.parse(recipes);
   }
@@ -102,7 +102,7 @@ async function getRecipes() {
     /**************************/
     // A4. TODO - Loop through each recipe in the RECIPE_URLS array constant
     //            declared above
-    for (const [i, element] of RECIPE_URLS.entries()) {
+    for (const [element, i] of RECIPE_URLS.entries()) {
       // A5. TODO - Since we are going to be dealing with asynchronous code, create
       //            a try / catch block. A6-A9 will be in the try portion, A10-A11
       //            will be in the catch portion.
